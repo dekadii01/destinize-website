@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="shortcut icon" href="assets/img/logo-travel.svg" type="image/x-icon">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Start header md -->
+    <header class="hidden md:block w-full  transition ease-in">
+        <nav class="bg-white dark:bg-gray-900  border-b border-b-[#DFDFE0] dark:border-b-[#DFDFE0]/60 " id="header">
+            <div class="container py-4">
+                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4">
+                    <a href="https://flowbite.com" class="flex items-center">
+                        <img src="assets/img/logo-travel.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                        <span
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Destinize</span>
+                    </a>
+                    <form class="w-2/5">
+                        <label for="default-search"
+                            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-3 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-[#9A9EA6] dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="default-search" class="block w-full py-4 pl-12 text-sm text-[#9A9EA6] font-light rounded-full
+                            bg-[#F0F1F2] border-none dark:bg-gray-700 
+                             dark:text-white " placeholder="Cari apapun disini" required>
+                        </div>
+                    </form>
+                    <div class="flex items-center gap-5">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i
+                                class="fa-solid fa-globe mr-2 text-graynew"></i>
+                            Bahasa Indonesia
+                            <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bahasa
+                                        Inggris</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Bahasa
+                                        Arab</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                            <div class="rounded-full w-10 h-10 bg-[#E3EBFD] z-0 relative mr-2 ">
+                                <img src="assets/img/icon/Icon.svg" alt="" class="absolute z-10" style="left: 50%;
+    transform: translate(-50%, 50%);">
+                            </div>
+                            <h1 class="font-bold text-base text-primary text-start"><span
+                                    class="text-graynew text-sm font-normal text-start">Lokasi</span> <br>Indonesia,
+                                Yogyakarta
+                            </h1>
+                            <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar2"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bali</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Nganjuk</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="theme-toggle" type="button"
+                            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+        </nav>
+        <nav class="bg-white dark:bg-gray-700 py-1">
+            <div class="container">
+                <div class="max-w-screen-xl px-4 py-3 mx-auto">
+                    <div class="flex items-center justify-between">
+                        <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar10" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Gunung
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar10"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Pantai
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar3"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar4" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Kuliner
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar4"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar5" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Outbond
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar5"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar6" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Sejarah
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar6"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar7" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Edukasi
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar7"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar8" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Romantis
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar8"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar9" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-graynew rounded
+                        hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
+                        dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700
+                        dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                    Alam
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar9"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Destinasi
+                                                1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
+                                    dark:hover:text-white">Destinasi 2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="flex items-center">
+                            <div class="rounded-full w-12 h-12 bg-primary  relative mr-2 cursor-pointer">
+                                <img src="assets/img/icon/bag.svg" alt="" class="absolute"
+                                    style="left: 50%; top: 50%; transform: translate(-50%,-50%);">
+                            </div>
+                            <div class="rounded-full w-12 h-12 bg-[#E3EBFD] relative mr-2 cursor-pointer">
+                                <img src="assets/img/icon/user.svg" alt="" class="absolute"
+                                    style="  left: 50%; top: 50%; transform: translate(-50%,-50%);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header md-->
+
+    <!-- Start header sm -->
+    <header class="block md:hidden" id="header2">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="#" class="flex items-center">
+                    <img src="assets/img/logo-travel.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Destinize</span>
+                </a>
+                <div class="flex md:order-2">
+                    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                        aria-expanded="false"
+                        class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                    <div class="relative hidden md:block">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search icon</span>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <button data-collapse-toggle="navbar-search" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-search" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                    <div class="relative mt-3 md:hidden">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="#"
+                                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#destination"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Destinasi</a>
+                        </li>
+                        <li>
+                            <a href="#testimoni"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimoni</a>
+                        </li>
+                        <li>
+                            <a href="#galeri"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Galeri</a>
+                        </li>
+                        <li>
+                            <a href="#faq"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#footer"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                        </li>
+                        <li class="">
+                            <button id="theme-toggle2" type="button"
+                                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg id="theme-toggle-dark-icon2" class="hidden w-5 h-5" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                </svg>
+                                <svg id="theme-toggle-light-icon2" class="hidden w-5 h-5" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header sm -->
+
+    <!-- Start hero section -->
+    <section id="hero" class="pt-24 pb-16 dark:bg-gray-900">
+        <div class="container">
+            <div class="grid md:grid-cols-2 place-items-center">
+                <div class="w-full h-full">
+                    <div class="py-2 px-3 bg-[#E5EDFF]  rounded-full w-fit mb-2">
+                        <h1 class="text-primary  font-bold ">✈️ • Explore the wonderful indonesia!</h1>
+                    </div>
+                    <h1
+                        class="text-dongker dark:text-white font-extrabold leading-tight tracking-tighter text-6xl mb-6">
+                        Liburan &
+                        nikmati
+                        <span class="text-primary">tempat baru</span> di
+                        indonesia ️🏝️</h1>
+                    <p class="text-[#5E6282] font-medium text-base md:w-9/12">Destinize membuat kamu selalu update
+                        terkait tempat
+                        liburan baru di
+                        Indonesia dengan
+                        mengikuti perkembangan para influencer di sosial media ✨</p>
+                    <div class="flex mt-7 items-center md:gap-4">
+                        <button type="button"
+                            class="text-white bg-gradient-to-r from-blue-500 via-primary to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-bold rounded-lg text-sm px-5 py-5 text-center mr-2 mb-2 ">Mulai
+                            sekarang ->
+                        </button>
+                        <div
+                            class="w-14 h-14 bg-white drop-shadow-md rounded-full flex items-center justify-center border border-primary mr-1">
+                            <i class="fa-solid fa-play text-primary "></i>
+                        </div>
+                        <h1 class="text-[#686D77] dark:text-white text-base font-bold">Putar sekarang</h1>
+                    </div>
+                </div>
+                <div class="w-full h-full">
+                    <img src="assets/img/hero.svg" alt="" class="w-full h-full">
+                </div>
+            </div>
+            <!-- Start client section -->
+            <div class="grid grid-cols-2 md:grid-cols-5 items-center justify-center gap-3 md:-mt-24">
+                <div class="w-full h-full">
+                    <img src="assets/img/client/client-1.svg" alt="" class="mx-auto w-10/12 h-5/6">
+                </div>
+                <div class="w-full h-full">
+                    <img src="assets/img/client/client-2.svg" alt="" class="mx-auto w-10/12 h-5/6">
+                </div>
+                <div class="w-full h-full">
+                    <img src="assets/img/client/client-3.svg" alt="" class="mx-auto w-10/12 h-5/6">
+                </div>
+                <div class="w-full h-full">
+                    <img src="assets/img/client/client-4.svg" alt="" class="mx-auto w-10/12 h-5/6">
+                </div>
+                <div class="w-full h-full">
+                    <img src="assets/img/client/client-5.svg" alt="" class="mx-auto w-10/12 h-5/6">
+                </div>
+            </div>
+            <!-- End client section -->
+        </div>
+
+
+    </section>
+    <!-- End hero section -->
+
+
+    <!-- Start destination section -->
+    <section id="destination" class="pb-28 dark:bg-gray-900">
+        <div class="container">
+            <h1 class="font-extrabold text-primary text-lg mb-5">DESTINASI FAVORIT</h1>
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="font-extrabold text-[#14183E] dark:text-white text-2xl md:text-4xl">✈️ • Temukan Destinasi
+                    Favoritmu
+                </h1>
+                <p class="font-semibold text-primary text-sm md:text-base"><a href="">Lihat semua ></a></p>
+            </div>
+            <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="relative w-full h-full">
+                                <img src="assets/img/destination/1.svg" alt="" class="w-full h-full rounded-md">
+                                <div class="absolute w-1/2 rounded h-fit img-card bottom-0">
+                                    <h1 class="font-semibold text-lg">Raja Ampat <br><span
+                                            class="text-graynew text-base font-medium">Bali</span></h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="relative w-full h-full">
+                                <img src="assets/img/destination/2.svg" alt="" class="w-full h-full rounded-md">
+                                <div class="absolute w-1/2 rounded h-fit img-card bottom-0">
+                                    <h1 class="font-semibold text-lg">Labuan Bajo <br><span
+                                            class="text-graynew text-base font-medium">NTT</span></h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="relative w-full h-full">
+                                <img src="assets/img/destination/3.svg" alt="" class="w-full h-full rounded-md">
+                                <div class="absolute w-1/2 rounded h-fit img-card bottom-0">
+                                    <h1 class="font-semibold text-lg">Kawah Ijen <br><span
+                                            class="text-graynew text-base font-medium">Jawa Timur</span></h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="relative w-full h-full">
+                                <img src="assets/img/destination/4.svg" alt="" class="w-full h-full rounded-md">
+                                <div class="absolute w-1/2 rounded h-fit img-card bottom-0">
+                                    <h1 class="font-semibold text-lg">Bromo <br><span
+                                            class="text-graynew text-base font-medium">Jawa Tengah</span></h1>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- End destination section -->
+
+
+    <!-- Start reservation section -->
+    <section id="reservation" class="pb-28 dark:bg-gray-900">
+        <div class="container">
+            <div class="grid place-items-center md:grid-cols-2">
+                <div class="">
+                    <h1 class="font-extrabold text-primary text-lg mb-5">RESERVASI TEMPAT</h1>
+                    <h1
+                        class="font-extrabold text-[#14183E] dark:text-white text-4xl md:text-5xl leading-tight tracking-tighter mb-8">
+                        Gak mau
+                        ngantri?
+                        reservasi aja!
+                        🤙🏻
+                    </h1>
+                    <div class="flex items-center gap-5 mb-6">
+                        <div class="w-fit h-fit">
+                            <div class="w-14 h-14 rounded-lg bg-[#EFE0B4] flex justify-center items-center">
+                                <div class="text-2xl">🔎</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-lg text-[#5E6282] dark:text-white mb-1">Cari tempat yang kamu mau
+                            </h1>
+                            <p class="text-base font-normal text-graynew md:w-9/12">Temukan destinasi selanjutnya yang
+                                akan kamu
+                                kunjungi dengan Destinize</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 mb-6">
+                        <div class="w-fit h-fit">
+                            <div class="w-14 h-14 rounded-lg bg-[#EFE0B4] flex justify-center items-center">
+                                <div class="text-2xl">📝</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-lg text-[#5E6282] dark:text-white mb-1">Isi data dan konfirmasi
+                                pembayaran</h1>
+                            <p class="text-base font-normal text-graynew md:w-9/12">Tulis dan lengkapi data kamu untuk
+                                keperluan data booking</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 mb-6">
+                        <div class="w-fit h-fit">
+                            <div class="w-14 h-14 rounded-lg bg-[#EFE0B4] flex justify-center items-center">
+                                <div class="text-2xl">😍</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-lg text-[#5E6282] dark:text-white mb-1">Tinggal masuk dan enjoy!
+                            </h1>
+                            <p class="text-base font-normal text-graynew md:w-9/12">Kamu bisa langsung masuk dan enjoy
+                                liburan kamu tanpa hambatan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <img src="assets/img/reservation/img-reservasi.svg" alt="" class="w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End reservation section -->
+
+    <!-- Start tempat wisata section -->
+    <section id="tempat-wisata" class="pb-28 dark:bg-gray-900">
+        <div class="container">
+            <h1 class="text-primary font-bold text-xl text-center mb-3">CARI TEMPAT WISATA</h1>
+            <h1 class="text-[#151D21] dark:text-white font-extrabold text-3xl md:text-4xl text-center mb-4 ">🗺 • Cari
+                Tempat Wisata
+                Didekatmu
+            </h1>
+            <p class="text-[15px] md:text-base text-[#18191F] dark:text-graynew text-center mx-auto md:w-8/12">Fitur ini
+                memungkinkan
+                kamu untuk mencari
+                tempat
+                wisata atau
+                tempat yang
+                sedang populer di daerah kamu
+                dengan begitu kamu akan selalu update dan gak kudet lagi 👍🏻</p>
+            <div class="my-8">
+                <img src="assets/img/indo.svg" alt="" class="w-full h-full rounded-md">
+            </div>
+            <div class="grid md:grid-cols-3 mt-10 gap-10 justify-between items-center">
+                <div class="flex w-full h-full gap-x-6 items-center">
+                    <div class="w-fit h-fit">
+                        <div
+                            class="w-14 h-14 bg-[#EFF2F6] drop-shadow-md rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-location-dot text-[#323232] text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-[#18214D] dark:text-white font-extrabold text-xl">Populer di dekatmu</h1>
+                        <p class="text-graynew text-base ">Tempat pariwisata yang populer dan pasti dikenal semua orang
+                            didekatmu</p>
+                    </div>
+                </div>
+                <div class="flex w-full h-full gap-x-6 items-center">
+                    <div class="w-fit h-fit">
+                        <div
+                            class="w-14 h-14 bg-[#EFF2F6] drop-shadow-md rounded-full flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-heart text-[#323232] text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-[#18214D] dark:text-white font-extrabold text-xl">Favorit di dekatmu</h1>
+                        <p class="text-graynew text-base ">Tempat favorit dan disukai semua orang orang di sekitar
+                            daerah kamu</p>
+                    </div>
+                </div>
+                <div class="flex w-full h-full gap-x-6 items-center">
+                    <div class="w-fit h-fit">
+                        <div
+                            class="w-14 h-14 bg-[#EFF2F6] drop-shadow-md rounded-full flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-users text-[#323232] text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-[#18214D] dark:text-white font-extrabold text-xl">Ramai di dekatmu</h1>
+                        <p class="text-graynew text-base ">Spot yang paling ramai dikunjungi para warga sekaligus para
+                            wisatawan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End tempat wisata section -->
+
+    <!-- Start galeri section -->
+    <section id="galeri" class="py-28 dark:bg-gray-900">
+        <div class="container">
+            <h1 class="font-extrabold text-primary text-lg mb-5">MENGENAL DESTINIZE</h1>
+            <div class="flex justify-between items-center mb-10 gap-1 md:gap-0">
+                <h1 class="font-extrabold text-[#14183E] dark:text-white text-2xl md:text-4xl">🖼️• Galeri Pariwisata &
+                    Blog Travel
+                </h1>
+                <p class="font-semibold text-primary text-sm md:text-base"><a href="">Lihat semua ></a></p>
+            </div>
+            <div class="flex gap-10 flex-wrap md:flex-nowrap">
+                <div class="md:w-1/4 min-h-full">
+                    <div class="bg-white dark:bg-gray-700 rounded-md shadow-md w-full min-h-full">
+                        <img src="assets/img/cover.svg" alt="" class="w-full h-full rounded-t-md">
+                        <div class="px-5 py-6 mt-3">
+                            <p class="text-sm text-graynew uppercase font-semibold mb-3">26 mei 2023</p>
+                            <h1 class="text-base font-bold text-[#252B42] dark:text-white mb-3">Tips naik gunung Bromo
+                                Biar gak capek cyin 😥😛</h1>
+                            <p class="text-sm text-[#737373] font-semibold mb-3">Jadi gini gann, anda tau bromo?
+                                yaaa gunung kann!</p>
+                            <p class="text-primary font-semibold text-sm">Baca selengkapnya..</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="w-full h-full">
+                        <div class="relative">
+                            <img src="assets/img/galeri/galeri-1.svg" alt="" class="w-full h-full">
+                            <div class="absolute cursor-pointer w-14 h-14 bg-primary rounded-full flex items-center justify-center left-[50%] top-[50%]"
+                                style="transform: translate(-50%, -50%);">
+                                <i class="fa-solid fa-play text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="w-full bg-no-repeat bg-[url('../../assets/img/galeri/bg-tips-galeri.svg')] bg-gray-500 bg-blend-multiply bg-cover rounded-md shadow-md mt-10">
+                <div class="py-6 px-5">
+                    <h1 class="font-extrabold text-white text-xl mb-3">Tips meminum air kawah biar lidah melepuh 😁</h1>
+                    <p class="text-base text-white mb-3 md:w-1/2">Lidah melepuh? why nott, kawah bukan untuk dilihat
+                        kawan.. tapi
+                        untuk di
+                        minum.. rasakan
+                        kepanasan yang brutal 🔥</p>
+                    <div class="flex gap-5">
+                        <h1 class=" text-white text-sm font-semibold">Google</h1>
+                        <h1 class=" text-white text-sm font-semibold">Trending</h1>
+                        <h1 class=" text-white text-sm font-semibold">Baru</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End galeri section -->
+
+    <!-- Start testimoni section -->
+    <section id="testimoni" class="py-28 dark:bg-gray-900">
+        <div class="container">
+            <p class="text-lg font-extrabold text-primary text-center uppercase">testimonial Destinize</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#151D21] dark:text-white my-5 text-center ">💬 • Apa
+                Kata Mereka
+                Tentang
+                Kami
+            </h1>
+            <p class="text-lg font-normal text-[#18191F] dark:text-graynew text-center md:w-9/12 mx-auto mb-10">
+                Penasaran apa saja review
+                dari
+                pengguna
+                yang
+                memakai aplikasi dan website Destinize buat nentuin kemana liburan mereka selanjutnya? Yuk cek dibawah!
+            </p>
+            <div class="grid md:grid-cols-3 items-center justify-between gap-10">
+                <div class="card-testi">
+                    <div class="py-10">
+                        <div class="w-36 h-36 mx-auto my-5">
+                            <img src="https://i.pinimg.com/564x/0c/4d/26/0c4d266b610b4fa94a5343d783cb5d43.jpg" alt=""
+                                class="w-full h-full rounded-full object-cover object-top">
+                        </div>
+                        <p
+                            class="text-[#737373] dark:text-white text-base text-center md:w-10/12 mx-auto font-medium mb-5 px-7 md:px-0">
+                            Destinize
+                            membantu saya
+                            mendapatkan jodoh, tidak disangka
+                            bahwa jodoh saya adalah CS nya</p>
+                        <div class="flex items-center justify-center gap-2 mb-5">
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                        </div>
+                        <h1 class="text-sm text-[#23A6F0] text-center font-semibold mb-5">Zee JKT48</h1>
+                        <h1 class="text-sm text-[#252B42] dark:text-white text-center font-semibold">Pacar Labee</h1>
+                    </div>
+                </div>
+                <div class="card-testi">
+                    <div class="py-10">
+                        <div class="w-36 h-36 mx-auto my-5">
+                            <img src="https://i.pinimg.com/564x/79/2e/7a/792e7a83b99149d7bae94d8b2f56927f.jpg" alt=""
+                                class="w-full h-full rounded-full object-cover object-top">
+                        </div>
+                        <p
+                            class="text-[#737373] dark:text-white text-base text-center md:w-10/12 mx-auto font-medium mb-5 px-7 md:px-0">
+                            Destinize
+                            membantu
+                            saya
+                            Mencari spot tempat wisata baru
+                            di Indonesia dengan Mudah</p>
+                        <div class="flex items-center justify-center gap-2 mb-5">
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                        </div>
+                        <h1 class="text-sm text-[#23A6F0] text-center font-semibold mb-5">Freya JKT48</h1>
+                        <h1 class="text-sm text-[#252B42] dark:text-white text-center font-semibold">Pacar Labee</h1>
+                    </div>
+                </div>
+                <div class="card-testi">
+                    <div class="py-10">
+                        <div class="w-36 h-36 mx-auto my-5">
+                            <img src="https://i.pinimg.com/564x/61/fb/2a/61fb2a58a2b1632b48bd2515f231561a.jpg" alt=""
+                                class="w-full h-full rounded-full object-cover object-top">
+                        </div>
+                        <p
+                            class="text-[#737373] dark:text-white text-base text-center md:w-10/12 mx-auto font-medium mb-5 px-7 md:px-0">
+                            Bikini
+                            Bottom menjadi sangat
+                            ramai dikunjungi saat saya
+                            memasukkannya di Destinize</p>
+                        <div class="flex items-center justify-center gap-2 mb-5">
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                            <i class="fa-solid fa-star text-[#E77C40] text-xl"></i>
+                        </div>
+                        <h1 class="text-sm text-[#23A6F0] text-center font-semibold mb-5">Michie & Chynthia JKT48</h1>
+                        <h1 class="text-sm text-[#252B42] dark:text-white text-center font-semibold">Pacar Labee</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End testimoni section -->
+
+    <!-- Start FAQ section -->
+    <section id="faq" class="py-28 dark:bg-gray-900">
+        <div class="container">
+            <h1 class="font-extrabold text-primary text-lg mb-5 text-center md:text-start">FREQUENTLY ASKED QUESTION
+            </h1>
+            <div class="flex justify-between items-center mb-10">
+                <h1 class="font-extrabold text-[#14183E] dark:text-white text-2xl md:text-4xl">🤔• Pertanyaan yang
+                    Sering Diajukan
+                </h1>
+                <p class="font-semibold text-primary text-sm md:text-base"><a href="">Lihat semua ></a></p>
+            </div>
+            <div id="accordion-collapse" data-accordion="collapse">
+                <h2 id="accordion-collapse-heading-1">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>Afa iyah bang? Gapeduli 👆🏻😅</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Dekadi ganteng dekadi ganteng dekadi ganteng
+                            Dekadi ganteng dekadi ganteng dekadi gantengDekadi ganteng dekadi ganteng dekadi ganteng</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-2">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-2">
+                        <span>Apa rekomendasi tempat buat orang yang jomblo? 😥</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Dekadi ganteng dekadi ganteng dekadi ganteng
+                            Dekadi ganteng dekadi ganteng dekadi gantengDekadi ganteng dekadi ganteng dekadi ganteng
+                        </p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>Apakah rehan wangsaff adalah CEO dari Destinize? 😅😅😅</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Dekadi ganteng dekadi ganteng dekadi ganteng
+                            Dekadi ganteng dekadi ganteng dekadi gantengDekadi ganteng dekadi ganteng dekadi ganteng</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End FAQ section -->
+
+    <!-- Start bingung section -->
+    <section id="bingung" class="py-24 px-5 md:px-20 dark:bg-gray-900">
+        <div class="container bg-[#4372EB] relative py-10 rounded-md">
+            <div class="md:mx-10 ">
+                <h1 class="text-3xl text-white font-extrabold md:w-2/6 mb-7">Masih bingung cari tempat yang cocok?
+                    🤔
+                </h1>
+                <p class="text-[#F1F2F6] text-lg font-normal md:w-2/6 mb-7">Tenang, kami mempunyai fitur rekomendasi
+                    yang membantu
+                    kamu mencari tempat
+                    berlibur yang tepat
+                    dengan menjawab pertanyaan yang kami berikan.</p>
+                <p class="text-[#F1F2F6] text-lg font-bold md:w-2/6 mb-7">Mulai
+                    sekarang <i class="fa fa-solid fa-arrow-right ml-1 text-lg"></i></p>
+            </div>
+            <div class="absolute w-fit h-full right-0 bottom-0 hidden md:block">
+                <img src="assets/img/bingung-vektor.svg" alt="" class="w-full h-full">
+            </div>
+        </div>
+    </section>
+    <!-- End bingung section -->
+
+    <!-- Start footer -->
+    <footer class="bg-white dark:bg-gray-900 pt-20" id="footer">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/img/logo-travel.svg" class="h-8 mr-3" alt="FlowBite Logo" />
+                        <span
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Destinize</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            </li>
+                            <li>
+                                <a href="https://codedesign.dev/challenge/destinize"
+                                    class="hover:underline">Codedesign</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="https://github.com/dekadii01" class="hover:underline ">Github</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://www.instagram.com/dekadii01" class="hover:underline">Instagram</a>
+                            </li>
+                            <li class="">
+                                <a href="https://www.linkedin.com/in/dekadii/" class="hover:underline">Linkedin</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                        href="https://flowbite.com/" class="hover:underline">Destinize™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 8 19">
+                            <path fill-rule="evenodd"
+                                d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 21 16">
+                            <path
+                                d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+                        </svg>
+                        <span class="sr-only">Discord community</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 17">
+                            <path fill-rule="evenodd"
+                                d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Twitter page</span>
+                    </a>
+                    <a href="https://github.com/dekadii01"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">GitHub account</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Dribbble account</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End footer -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-carousel', {
+                type: 'loop',
+                // perPage: 4,
+                perMove: 1,
+                rewind: true,
+                infinite: true,
+                pagination: false,
+                arrows: false,
+                autoplay: {
+                    delay: 500, // Waktu tunda antara slide dalam milidetik
+                    pauseOnHover: true // Jeda autoplay saat kursor berada di atas carousel
+                },
+                gap: '20px',
+                perPage: 4,
+                breakpoints: {
+                    1024: {
+                        perPage: 3,
+
+                    },
+                    767: {
+                        perPage: 2,
+
+                    },
+                    640: {
+                        perPage: 1,
+
+                    },
+                },
+            }).mount();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>
